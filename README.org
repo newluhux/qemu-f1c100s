@@ -1,0 +1,74 @@
+* qemu allwinner f1c100s
+
+I'm try add allwinner f1c100s support into qemu.
+
+* hardware support
+
+| hardware   | status | test result |
+|------------+--------+-------------|
+| SRAM A1    | OK     | uboot ok    |
+| SDRAM      | OK     | uboot ok    |
+| INTC       | TODO   | need test   |
+| CCU        | OK     | uboot ok    |
+| TIMER      | OK     | uboot ok    |
+| MEMC       | TODO   |             |
+| UART       | OK     | uboot ok    |
+| LCD        | TODO   |             |
+| TWI        | TODO   | need test   |
+| MMC        | TODO   | need test   |
+| AUDIO      | TODO   |             |
+| SPI MASTER | OK     | uboot ok    |
+| EHCI       | TODO   |             |
+| GPIO       | TODO   |             |
+| BOOTROM    | OK     | spiboot ok  |
+
+* boot from flash
+
+You can boot from spi nor flash.
+
+* bootrom
+
+I'm write a opensource bootrom for qemu, now it only support boot from spi flash
+
+* how to run it
+
+1. use buildroot build firmware: https://github.com/newluhux/licheepi_buildroot
+
+2. get qemu source tree and apply patch
+
+#+BEGIN_SRC shell
+ git clone https://gitlab.com/qemu-project/qemu /path/to/qemu
+ cd /path/to/qemu/
+ git am < xxxx.patch
+#+END_SRC
+
+3. build qemu
+
+#+BEGIN_SRC shell
+ cd /path/to/qemu/
+ ./configure --cc=gcc --cxx=g++ \
+		--target-list=arm-softmmu \
+		--enable-debug --enable-debug-tcg --enable-debug-info
+ make -j$(nproc)
+ make check
+#+END_SRC
+
+4. run qemu:
+
+#+BEGIN_SRC shell
+ cd /path/to/qemu/
+ ./qemu-system-mipsel -M allwinner-f1c100s -m 32 \
+		-nographic \
+		-bios ./bootrom.bin \
+		-drive if=mtd,file=./flash_8M.bin,format=raw
+#+END_SRC
+
+* license
+
+same with qemu
+
+* history
+
+2023/02/28: start project, try impl allwinner sun6i spi controller.
+			try impl bootrom.
+2023/03/03: allwinner sun6i spi controller is ok, bootrom is ok.
