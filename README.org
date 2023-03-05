@@ -22,6 +22,10 @@ I'm try add allwinner f1c100s support into qemu.
 | GPIO       | TODO   |             |
 | BOOTROM    | OK     | spiboot ok  |
 
+* SDRAM size
+
+because qemu can't emulate DRAM test, uboot is always report 64MiB DRAM.
+
 * boot from flash
 
 You can boot from spi nor flash.

@@ -1,4 +1,4 @@
-From c2385298db9363aa0d77ecb1e6b1d95736dd0dd3 Mon Sep 17 00:00:00 2001
+From e62e60cc394d7116af7d741a06dd2ea97d8d0bd6 Mon Sep 17 00:00:00 2001
 From: LuHui <luhux76@gmail.com>
 Date: Sun, 5 Mar 2023 21:26:46 +0800
 Subject: [PATCH 3/3] hw/arm/allwinner-f1c100s: add allwinner f1c100s soc
@@ -49,7 +49,7 @@ index b5aed4aff5..08937b0b14 100644
      select ALLWINNER_A10_PIT
 diff --git a/hw/arm/allwinner-f1c100s.c b/hw/arm/allwinner-f1c100s.c
 new file mode 100644
-index 0000000000..2f32d7e30c
+index 0000000000..a7c0638897
 --- /dev/null
 +++ b/hw/arm/allwinner-f1c100s.c
 @@ -0,0 +1,385 @@
@@ -433,7 +433,7 @@ index 0000000000..2f32d7e30c
 +    mc->default_cpus = 1;
 +    mc->default_cpu_type = ARM_CPU_TYPE_NAME("arm926");
 +    /* bug: because qemu can't emulate DRAM test, uboot spl report 64 MiB */
-+    mc->default_ram_size = 32 * MiB;
++    mc->default_ram_size = 64 * MiB;
 +    mc->default_ram_id = "aw_f1c100s.ram";
 +};
 +
