@@ -61,7 +61,7 @@ I'm write a opensource bootrom for qemu, now it only support boot from spi flash
 
 #+BEGIN_SRC shell
  cd /path/to/qemu/
- ./qemu-system-mipsel -M allwinner-f1c100s -m 32 \
+ ./qemu-system-arm -M allwinner-f1c100s -m 32 \
 		-nographic \
 		-bios ./bootrom.bin \
 		-drive if=mtd,file=./flash_8M.bin,format=raw
@@ -79,3 +79,4 @@ same with qemu
 
 2023/03/03: allwinner sun6i spi controller is ok, bootrom is ok.
 
+2023/03/06: upload missing code, fix doc
