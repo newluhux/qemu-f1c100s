@@ -1,7 +1,7 @@
 From 0aa208f796a1fb06e310319311e9f2675bcab13b Mon Sep 17 00:00:00 2001
 From: LuHui <luhux76@gmail.com>
 Date: Sun, 5 Mar 2023 21:26:20 +0800
-Subject: [PATCH 2/3] hw/intc/allwinner-f1c100s-intc: add allwinner f1c100s
+Subject: [PATCH 3/4] hw/intc/allwinner-f1c100s-intc: add allwinner f1c100s
  interrupt control support
 
 Signed-off-by: LuHui <luhux76@gmail.com>

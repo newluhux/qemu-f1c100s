@@ -1,7 +1,7 @@
 From e62e60cc394d7116af7d741a06dd2ea97d8d0bd6 Mon Sep 17 00:00:00 2001
 From: LuHui <luhux76@gmail.com>
 Date: Sun, 5 Mar 2023 21:26:46 +0800
-Subject: [PATCH 3/3] hw/arm/allwinner-f1c100s: add allwinner f1c100s soc
+Subject: [PATCH 4/4] hw/arm/allwinner-f1c100s: add allwinner f1c100s soc
  support
 
 Signed-off-by: LuHui <luhux76@gmail.com>
