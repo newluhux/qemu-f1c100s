@@ -80,3 +80,5 @@ same with qemu
 2023/03/03: allwinner sun6i spi controller is ok, bootrom is ok.
 
 2023/03/06: upload missing code, fix doc
+
+2023/03/14: fix interrupt controller by zhaosx <shaoxi2010@qq.com> thank.

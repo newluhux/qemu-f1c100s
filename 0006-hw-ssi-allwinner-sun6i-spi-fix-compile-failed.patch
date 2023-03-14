@@ -1,0 +1,28 @@
+From e9dbf3df86b34539f6776c917b846894f9ce8f79 Mon Sep 17 00:00:00 2001
+From: LuHui <luhux76@gmail.com>
+Date: Tue, 14 Mar 2023 21:25:44 +0800
+Subject: [PATCH 6/6] hw/ssi/allwinner-sun6i-spi: fix compile failed.
+
+Signed-off-by: LuHui <luhux76@gmail.com>
+---
+ hw/ssi/allwinner-sun6i-spi.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/hw/ssi/allwinner-sun6i-spi.c b/hw/ssi/allwinner-sun6i-spi.c
+index cc18d7627f..f639f115c7 100644
+--- a/hw/ssi/allwinner-sun6i-spi.c
++++ b/hw/ssi/allwinner-sun6i-spi.c
+@@ -94,8 +94,8 @@ static void aw_sun6i_spi_xfer(AwSun6iSpiState *s)
+     }
+     DPRINTF("%s: spi xfer start\n", __func__);
+     int i;
+-    uint8_t rx;
+-    uint8_t tx;
++    uint8_t rx = 0x00;
++    uint8_t tx = 0x00;
+     /* 
+      * act a 'smart spi controller'
+      * because mainline uboot:
+-- 
+2.35.7
+
