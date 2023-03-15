@@ -1,0 +1,29 @@
+From d64feddf9f46fe60487cb6532438177cf2a7513d Mon Sep 17 00:00:00 2001
+From: LuHui <luhux76@gmail.com>
+Date: Wed, 15 Mar 2023 20:17:36 +0800
+Subject: [PATCH 7/7] hw/arm/allwinner-f1c100s: add awuart unimp memory region.
+
+Signed-off-by: LuHui <luhux76@gmail.com>
+---
+ hw/arm/allwinner-f1c100s.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/hw/arm/allwinner-f1c100s.c b/hw/arm/allwinner-f1c100s.c
+index 1beca17543..e6b3dbf2a0 100644
+--- a/hw/arm/allwinner-f1c100s.c
++++ b/hw/arm/allwinner-f1c100s.c
+@@ -73,6 +73,11 @@ static struct AwF1C100SUnimplemented {
+     hwaddr base;
+     hwaddr size;
+ } unimplemented[] = {
++    /* allwinner uart have extra register for fifo, */
++    /* xboot's uart code use this region */
++    { "awuart0", 0x01C25020, 0x3E0 },
++    { "awuart1", 0x01C25420, 0x3E0 },
++    { "awuart2", 0x01C25820, 0x3E0 },
+     { "sysctrl", 0x01C00000, 4 * KiB },
+     { "dramc",   0x01C01000, 4 * KiB },
+     { "dma",     0x01C02000, 4 * KiB },
+-- 
+2.35.7
+

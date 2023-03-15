@@ -4,23 +4,24 @@ I'm try add allwinner f1c100s support into qemu.
 
 * hardware support
 
-| hardware   | status | test result |
-|------------+--------+-------------|
-| SRAM A1    | OK     | uboot ok    |
-| SDRAM      | OK     | uboot ok    |
-| INTC       | TODO   | need test   |
-| CCU        | OK     | uboot ok    |
-| TIMER      | OK     | uboot ok    |
-| MEMC       | TODO   |             |
-| UART       | OK     | uboot ok    |
-| LCD        | TODO   |             |
-| TWI        | TODO   | need test   |
-| MMC        | TODO   | need test   |
-| AUDIO      | TODO   |             |
-| SPI MASTER | OK     | uboot ok    |
-| EHCI       | TODO   |             |
-| GPIO       | TODO   |             |
-| BOOTROM    | OK     | spiboot ok  |
+| hardware   | status | test result     |
+|------------+--------+-----------------|
+| SRAM A1    | OK     | uboot ok        |
+| SDRAM      | OK     | uboot ok        |
+| INTC       | TODO   | need test       |
+| CCU        | OK     | uboot ok        |
+| TIMER      | OK     | uboot ok        |
+| MEMC       | TODO   |                 |
+| UART       | OK     | uboot ok        |
+| AWUART     | TODO   | failed on xboot |
+| LCD        | TODO   |                 |
+| TWI        | TODO   | need test       |
+| MMC        | TODO   | need test       |
+| AUDIO      | TODO   |                 |
+| SPI MASTER | OK     | uboot ok        |
+| EHCI       | TODO   |                 |
+| GPIO       | TODO   |                 |
+| BOOTROM    | OK     | spiboot ok      |
 
 * SDRAM size
 
